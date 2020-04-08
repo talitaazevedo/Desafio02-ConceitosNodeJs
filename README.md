@@ -16,6 +16,8 @@ Essa é uma aplicação para armazenar repositórios do seu portfólio, que irá
 
 utilizamos o Insomnia para criar rotas  de Criação Atualização Delete.
 
+![Exemplo.gif](./assets/Exemplo.gif)
+
 ## Configuração para Desenvolvimento
 
 Para o ambiente de Desenvolvimento instale as dependencias abaixo utlizando o yarn gerenciador de pacote.
