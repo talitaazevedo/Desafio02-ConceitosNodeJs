@@ -10,7 +10,7 @@ app.use(cors());
 
 const repositories = [];
 
-/* Middleware */
+/* Middleware  sends a message if likes on req.body*/
 function likesMiddleware(req,res,next){
   const hasLikes = req.body.likes;
   if(hasLikes){
@@ -52,6 +52,7 @@ app.put("/repositories/:id", (request, response) => {
   if(repoIndex < 0){
     return response.status(400).send();
   }
+  const  repoLikes = repositories[repoIndex].likes;
 
   
   const repository = {
@@ -59,7 +60,7 @@ app.put("/repositories/:id", (request, response) => {
     title,
     url,
     techs,
-    likes:repositories.likes
+    likes: repoLikes,
     
 
     
