@@ -21,6 +21,17 @@ function likesMiddleware(req,res,next){
   return next();
 }
 
+function logRequests(req,res,next){
+
+  const { method, url} = req;
+  const logLabel = `[${method.toUpperCase()}] ${url}`
+  console.time(logLabel);
+
+  next();
+
+  console.timeEnd(logLabel);
+}
+app.use(logRequests);
 app.use(likesMiddleware);
 app.get("/repositories", (request, response) => {
   const {title} = request.query;
